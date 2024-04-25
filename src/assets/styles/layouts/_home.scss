@@ -1,36 +1,35 @@
-
 .home {
-  //Per defecte utilitzaría flex
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   width: 100%;
   max-height: 70vh;
-  overflow: hidden;
-  @media(max-width: $tablet) { 
-    height: auto;
+  //Per defecte utilitzaría flex
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+  @media(max-width: $tablet) {
 
     max-height: none; 
+    height: auto; 
   }
 
   // Amb @supports indique que si el navegador es compatible amb grid utiltize aquesta part del codi
   @supports (display: grid) {
     display: grid;
+
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1.5fr 1fr 3fr 1fr;
     grid-template-areas:
       "home__a home__a home__b"
       "home__a home__a home__b"
       "home__a home__a home__c"
       "home__d home__d home__c";
-    grid-template-rows: 1.5fr 1fr 3fr 1fr;
-
-    grid-template-columns: 1fr 3fr 1fr;
       
 
       @media(max-width: $tablet) {
         display: flex;
         flex-direction: column;
-        height: auto;
-        max-height: none; 
+        max-height: none;
+        height: auto; 
       }
 
       &__a { 
@@ -70,20 +69,20 @@
     }
   }
 
-  &__b {
-    align-items: center; 
-    justify-content: start;
-    font-family: $font-family-Comic;
-    line-height: 1.5;
-    text-align: center; 
+  &__b { 
     background-color: $color-secundari;
+    font-family: $font-family-Comic;
+    text-align: center;
+    align-items: center;
+    line-height: 1.5; 
+    justify-content: start;
     container-type: inline-size;
     container-name: home;
 
 
     &__text {
-      position: relative;
       display: block;
+      position: relative;
       animation: moveVertical 5s linear infinite;
 
       @media(max-width: $tablet) {
@@ -109,12 +108,12 @@
     }
   }
 
-  &__c {
-    align-items: center;
-    justify-content: center;
-    max-height: 100%;
-    color: $white; 
+  &__c { 
     background-color: $gray;
+    height: auto;
+    color: $white;
+    justify-content: center;
+    align-items: center;
 
 
   &__container{
@@ -126,14 +125,14 @@
   
   }
 
-  &__d {
-    position: relative; 
+  &__d { 
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
 
-    i { 
-      padding: 0 10px;
+    i {
       font-size: 2rem; 
+      padding: 0 10px; 
       animation: moveX 40s linear infinite;
 
       &:hover {
@@ -174,122 +173,3 @@
       font-size: 3rem;
     }  }
 }
-
-
-
-/*
-.home {
-  display: grid;
-  max-height: 100vh;
-  width: 100%;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1.5fr 1fr 3fr 1fr;
-  grid-template-areas:
-    "home__a home__a home__b"
-    "home__a home__a home__b"
-    "home__a home__a home__c"
-    "home__d home__d home__c";
-
-    @media(max-width: $phone){
-      display: flex;
-      flex-direction: column;
-      max-height: none;
-    }
-
-    &__a { grid-area: home__a; 
-      @media(max-width: $phone){
-        
-        opacity: 0.7;
-      }
-      
-    img{
-      
-      width: 100%;
-      max-height: 60vh;
-      @media(max-width: $phone){
-        
-        width: 100vw; 
-        max-height: none
-      }
-      
-      
-      
-    }
-  
-  
-  };
-    &__b { 
-      background-color: $color-secundari;
-      grid-area: home__b;
-      font-size: 0.8rem;
-      font-family: $font-family-TitilliumWeb;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      &__text{
-        display: block;
-        position: relative;
-        font-size: 1.3rem;
-        animation: moveVertical 5s linear infinite;
-        @media(max-width: $phone){
-
-          animation: none
-        }
-
-
-        line-height: 1.5; 
-        justify-content: start;
-        text-align: center;
-        &__1, &__2 {
-          display: inline-block; 
-          
-        }
-      
-        &__1 {
-          animation: gamaGris 4s infinite linear;
-        }
-      
-        &__2 {
-          animation: gamaGris 6s infinite linear; 
-        }
-      }
-    
-    };
-    &__c { grid-area: home__c;
-    background-color: $graylight;
-    max-height: 100%;
-  &__container{
-    padding: 5%;
-    &__h2{
-      font-size: 1.2rem;
-    }
-  } };
-    &__d { grid-area: home__d;
-    
-     
-        
-         
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-        margin-top: 25px;
-        
-        i {
-          font-size: 24px; 
-          
-          padding: 0 10px; 
-          animation: moveX 40s linear infinite;
-          &:hover{
-            transform: scale(110%);
-          }
-        }
-        
-        
-
-      } ;
-   
-}
-*/
-
-
-

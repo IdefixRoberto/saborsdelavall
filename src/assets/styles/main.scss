@@ -41,15 +41,13 @@ body {
 
 
 
-main {
+main, header {
   flex-shrink: 0;   /* Fa que el 'main' ocupi tot l'espai restant*/
 }
 
-header,footer {
-  flex-grow: 1;   /* Evita que el footer s'ample */
-  background-color: $gray;
+footer {
+  flex-grow: 1;   /* Evita que el footer s'ampliï */
 }
-
 
 //Arregle els hipervincles
 
@@ -80,6 +78,12 @@ h2,h3,h4{
 #logo{
   width:100px;
   height: 60px;
+}
+
+
+
+footer, header{
+  background-color: $gray;
 }
 
 
