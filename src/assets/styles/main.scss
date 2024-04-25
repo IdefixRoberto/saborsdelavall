@@ -46,7 +46,8 @@ main {
 }
 
 header, footer {
-  flex-grow: 1;   /* Evita que el footer s'ampliï */
+  flex-grow: 1;   /* Evita que el footer s'ample */
+  background-color: $gray;
 }
 
 //Arregle els hipervincles
@@ -81,10 +82,6 @@ h2,h3,h4{
 }
 
 
-
-footer, header{
-  background-color: $gray;
-}
 
 
 
