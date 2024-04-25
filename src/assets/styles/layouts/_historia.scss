@@ -328,6 +328,7 @@ blockquote.cita-famos:has(.nom-personatge) {
 
       figcaption{
         background-color: $white;
+        color: $dark-color
       }
     } 
  
@@ -341,6 +342,7 @@ blockquote.cita-famos:has(.nom-personatge) {
       }
       figcaption{
         background-color: $aliceblue;
+        color: $dark-color
       }
     } 
  
@@ -351,6 +353,11 @@ blockquote.cita-famos:has(.nom-personatge) {
       img{
         width: 100%;
         height: auto;
+      }
+
+      figcaption{
+        background-color: $color-secundari;
+        color: $dark-color
       }
     }
 
