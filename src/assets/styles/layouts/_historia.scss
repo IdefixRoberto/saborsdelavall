@@ -245,7 +245,13 @@
   }
 
   &__demografia {
-    margin: 0 15% 5% 15%;
+    
+   
+    @media (max-width: 610px) {
+      display: none;
+    }
+
+
   }
 }
 
@@ -261,15 +267,7 @@
   }
 }
 
-@media (max-width: $phone) {
-  #demografiaChart {
-    display: none;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-  }
-}
+
 
 
 
@@ -315,7 +313,7 @@ blockquote.cita-famos:has(.nom-personatge) {
   @container activity  (min-width: 250px) and (max-width: 400px) {
     .historia-activity__image{
       img{
-        width: 350px;
+        width: 60lvh;
         height: auto;
       }
     } 
@@ -324,27 +322,34 @@ blockquote.cita-famos:has(.nom-personatge) {
   @container activity  (min-width: 400px) and (max-width: 500px) {
     .historia-activity__image{
       img{
-        width: 400px;
+        width:  400px;
         height: auto;
+      }
+
+      figcaption{
+        background-color: $white;
       }
     } 
  
   }
 
-  @container activity  (min-width: 600px) and (max-width: 700px) {
+  @container activity  (min-width: 500px) and (max-width: 850px) {
     .historia-activity__image{
       img{
-        width: 400px;
+        width: 100%;
         height: auto;
+      }
+      figcaption{
+        background-color: $aliceblue;
       }
     } 
  
   }
 
-  @container activity  (min-width: 700px)  {
+  @container activity  (min-width: 850px)  {
     .historia-activity__image{
       img{
-        width: 700px;
+        width: 100%;
         height: auto;
       }
     }

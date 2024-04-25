@@ -30,6 +30,8 @@
         flex-direction: column;
         height: auto;
         max-height: none; 
+        align-items: center;
+        justify-content: center;
       }
 
       &__a { 
@@ -39,6 +41,7 @@
       
       &__b { 
         grid-area: home__b;
+        
       }
       
       &__c { 
@@ -47,6 +50,10 @@
       
       &__d { 
         grid-area: home__d;
+        i{
+          margin: auto 0;
+        }
+        
       }
 
 
