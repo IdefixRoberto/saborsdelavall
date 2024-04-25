@@ -8,7 +8,7 @@
 
   &__concurs {
     
-    justify-content: center;
+    
     margin-bottom: 2vh; // Añadiendo el margen inferior aquí
 
 
@@ -44,7 +44,9 @@
 
 
   &-activities{
-
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
 
 
 
@@ -60,7 +62,10 @@
     margin-bottom: 5vh;
     color: $white;
     
+
+
     @media (max-width: $tablet) {
+      
       flex-direction: column-reverse;
       .historia-activity__description {
         margin: 0;
@@ -247,11 +252,11 @@
 .historia__articles__contenidor {
   .historia__articles__contenidor__activitats {
     &:where(:nth-child(odd)) .historia__articles__contenidor__activitats__text {
-      background-color: $uoc-masterbrand; // Color para los elementos impares
+      background-color: $uoc-masterbrand; // Colorper als impars
     }
 
     &:where(:nth-child(even)) .historia__articles__contenidor__activitats__text {
-      background-color: $light-green; // Color para los elementos pares
+      background-color: $light-green; // Color per als elements pars
     }
   }
 }
@@ -268,49 +273,29 @@
 
 
 
-.cita-personatge,
-.cita-famos {
-  padding-left: 20px;
-  margin-left: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2em;
-  font-style: italic;
-  color: #555;
-  border-left: 3px solid $orange;
 
-  &.nom-personatge {
-    font-weight: bold;
-  }
-}
-
-.cita-personatge{
-  margin-left: 10px;
-}
-
-.cita-famos {
-  margin-left: 10px;
-  font-style: italic;
-  color: #555;
-}
 
 :is(blockquote.cita-famos, blockquote.cita-personatge) {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-style: italic;
 }
 
-:where(blockquote.cita-famos, blockquote.cita-personatge) {
-  margin-left: 20px;
+:where( blockquote.cita-personatge) {
+  padding: 120px;
+  margin-left: 100px;
+  color: #555;
+  background-color:  #d3d3d3b5 ;
   border-left: 3px solid $orange;
 }
 
-blockquote.cita-personatge:has(.nom-personatge) {
+blockquote.cita-famos:has(.nom-personatge) {
   font-weight: bold;
-  color: $tomaca
+  color: $tomaca;
+  margin-left: 10px;
 }
 
-.historia__articles__contenidor__activitats__text p:has(> span) {
-  color: $green; 
-}
+
 
 
 

@@ -56,11 +56,15 @@ Personalització de boostrap
 
 $carousel-control-color:             $blue;
 $carousel-control-width:             15%;
-$carousel-indicator-width:           30px;
-$carousel-indicator-height:          3px;
-$carousel-indicator-hit-area-height: 10px;
-$carousel-indicator-spacer:          3px;
+$carousel-indicator-width:           40px;
+$carousel-indicator-height:          5px;
+$carousel-indicator-hit-area-height: 12px;
+$carousel-indicator-spacer:          4px;
 
+/* Personalització de la font del alert*/
+
+$alert-link-font-weight: $font-family-Comic;
+$alert-border-radius: 15%;
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 

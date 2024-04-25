@@ -45,10 +45,11 @@ main {
   flex-shrink: 0;   /* Fa que el 'main' ocupi tot l'espai restant*/
 }
 
-header, footer {
+header,footer {
   flex-grow: 1;   /* Evita que el footer s'ample */
   background-color: $gray;
 }
+
 
 //Arregle els hipervincles
 
