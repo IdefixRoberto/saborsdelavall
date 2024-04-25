@@ -1,0 +1,70 @@
+.logo {
+  width: auto;
+  max-width: 100px; 
+  height: auto;
+  max-height: 100px;
+}
+
+.social-icon {
+  margin: 0 10px; 
+  color: $dark-color; 
+  &:hover {
+    transform: scale(1.1); 
+  }
+}
+
+.fa-google:hover {
+  color: #4285F4; 
+}
+.fa-facebook-f:hover {
+  color: #3B5998;
+}
+.fa-twitter:hover {
+  color: #1DA1F2; 
+}
+
+
+.footer {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  min-height: 10vh;
+  padding: 2rem 0;
+  color: $white;
+  background-color: $gray; 
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+
+    > div { 
+      display: flex;
+      flex: 1 0 20%; 
+      align-items: center;
+      justify-content: center;
+      width: 100%; 
+      margin-bottom: 1rem; 
+
+      a { 
+        font-size: 1.7rem;
+        color: $white;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    .footer__container {
+      flex-direction: column;
+
+      > div {
+        flex: none; 
+        width: 100%; 
+      }
+    }
+  }
+}

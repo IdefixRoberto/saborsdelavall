@@ -1,0 +1,295 @@
+
+.home {
+  //Per defecte utilitzaría flex
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-height: 75vh;
+  overflow: hidden;
+  @media(max-width: $tablet) { 
+    height: auto;
+
+    max-height: none; 
+  }
+
+  // Amb @supports indique que si el navegador es compatible amb grid utiltize aquesta part del codi
+  @supports (display: grid) {
+    display: grid;
+    grid-template-areas:
+      "home__a home__a home__b"
+      "home__a home__a home__b"
+      "home__a home__a home__c"
+      "home__d home__d home__c";
+    grid-template-rows: 1.5fr 1fr 3fr 1fr;
+
+    grid-template-columns: 1fr 3fr 1fr;
+      
+
+      @media(max-width: $tablet) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-height: none; 
+      }
+
+      &__a { 
+        grid-area: home__a;
+        overflow: hidden;
+      }
+      
+      &__b { 
+        grid-area: home__b;
+      }
+      
+      &__c { 
+        grid-area: home__c;
+      }
+      
+      &__d { 
+        grid-area: home__d;
+      }
+
+
+  }
+
+  &__a { 
+
+    @media(max-width: $phone) {
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      @media(max-width: $tablet) {
+        width: 100vw;
+        height: auto;
+      }
+    }
+  }
+
+  &__b {
+    align-items: center; 
+    justify-content: start;
+    font-family: $font-family-Comic;
+    line-height: 1.5;
+    text-align: center; 
+    background-color: $color-secundari;
+    container-type: inline-size;
+    container-name: home;
+
+
+    &__text {
+      position: relative;
+      display: block;
+      animation: moveVertical 5s linear infinite;
+
+      @media(max-width: $tablet) {
+        animation: none;
+      }
+
+
+
+      &__1, &__2 {
+        display: block;
+        width: 100%;
+        margin-bottom: 2vh; 
+
+      }
+  
+      &__1 {
+        animation: gamaGris 4s infinite linear;
+      }
+  
+      &__2 {
+        animation: gamaGris 6s infinite linear; 
+      }
+    }
+  }
+
+  &__c {
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    color: $white; 
+    background-color: $gray;
+
+
+  &__container{
+    padding: 3% 5%;
+  }
+    &__title { 
+      font-size: 1.2rem;
+    }
+  
+  }
+
+  &__d {
+    position: relative; 
+    overflow: hidden;
+    white-space: nowrap;
+
+    i { 
+      padding: 0 10px;
+      font-size: 2rem; 
+      animation: moveX 40s linear infinite;
+
+      &:hover {
+        transform: scale(110%);
+      }
+    } 
+  }
+}
+
+
+@supports (container-type: inline-size) {
+ 
+
+  @container home (max-width: 400px) {
+    .historia-activity__image{
+      width: 300px;
+      height: 200px;
+    }
+  }
+  @container  home (min-width: 150px) and (max-width: 200px) {
+    .home__b__text__1, .home__b__text__2{
+      font-size: 1.25rem;
+    }  }
+  @container home  (min-width: 200px) and (max-width: 250px) {
+    .home__b__text__1, .home__b__text__2{
+      font-size: 1.5rem;
+    }  }
+  @container home  (min-width: 250px) and (max-width: 300px) {
+    .home__b__text__1, .home__b__text__2{
+      font-size: 1.75rem;
+    }  }
+  @container home  (min-width: 300px) and (max-width: 400px) {
+    .home__b__text__1, .home__b__text__2{
+      font-size: 2rem;
+    }  }
+  @container home  (min-width: 400px) {
+    .home__b__text__1, .home__b__text__2{
+      font-size: 3rem;
+    }  }
+}
+
+
+
+/*
+.home {
+  display: grid;
+  max-height: 100vh;
+  width: 100%;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1.5fr 1fr 3fr 1fr;
+  grid-template-areas:
+    "home__a home__a home__b"
+    "home__a home__a home__b"
+    "home__a home__a home__c"
+    "home__d home__d home__c";
+
+    @media(max-width: $phone){
+      display: flex;
+      flex-direction: column;
+      max-height: none;
+    }
+
+    &__a { grid-area: home__a; 
+      @media(max-width: $phone){
+        
+        opacity: 0.7;
+      }
+      
+    img{
+      
+      width: 100%;
+      max-height: 60vh;
+      @media(max-width: $phone){
+        
+        width: 100vw; 
+        max-height: none
+      }
+      
+      
+      
+    }
+  
+  
+  };
+    &__b { 
+      background-color: $color-secundari;
+      grid-area: home__b;
+      font-size: 0.8rem;
+      font-family: $font-family-TitilliumWeb;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      &__text{
+        display: block;
+        position: relative;
+        font-size: 1.3rem;
+        animation: moveVertical 5s linear infinite;
+        @media(max-width: $phone){
+
+          animation: none
+        }
+
+
+        line-height: 1.5; 
+        justify-content: start;
+        text-align: center;
+        &__1, &__2 {
+          display: inline-block; 
+          
+        }
+      
+        &__1 {
+          animation: gamaGris 4s infinite linear;
+        }
+      
+        &__2 {
+          animation: gamaGris 6s infinite linear; 
+        }
+      }
+    
+    };
+    &__c { grid-area: home__c;
+    background-color: $graylight;
+    max-height: 100%;
+  &__container{
+    padding: 5%;
+    &__h2{
+      font-size: 1.2rem;
+    }
+  } };
+    &__d { grid-area: home__d;
+    
+     
+        
+         
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        margin-top: 25px;
+        
+        i {
+          font-size: 24px; 
+          
+          padding: 0 10px; 
+          animation: moveX 40s linear infinite;
+          &:hover{
+            transform: scale(110%);
+          }
+        }
+        
+        
+
+      } ;
+   
+}
+*/
+
+
+

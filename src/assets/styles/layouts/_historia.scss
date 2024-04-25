@@ -1,0 +1,369 @@
+@import "bootstrap/scss/bootstrap";
+
+.historia {
+  margin: 5vh 10%;
+  @media (max-width: $phone) {
+    margin: 5% 5%;
+  }
+
+  &__concurs {
+    
+    justify-content: center;
+    margin-bottom: 2vh; // Añadiendo el margen inferior aquí
+
+
+
+    &__header {
+      text-align: center;
+
+      .historia__title {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .historia__title-word {
+          margin-right: 8px;
+          &:last-child{
+            margin-right: 0;
+          }
+          @for $i from 1 through 8 {
+            &--#{$i} {
+              animation: animacioArcoiris 4s + $i * 0.25s infinite linear;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    &__paragraph, &__quote, &__quote-text {
+      margin-bottom: 2vh; 
+    }
+  }
+
+
+  &-activities{
+
+
+
+
+    container-type: inline-size;
+    container-name: activity;
+  }
+
+  &-activity{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+    color: $white;
+    
+    @media (max-width: $tablet) {
+      flex-direction: column-reverse;
+      .historia-activity__description {
+        margin: 0;
+        
+      }
+    }
+
+    .historia-activity__description {
+      width: 100%;
+      padding: 3vh;
+      
+    }
+
+
+
+    &:nth-child(1){
+     
+      .historia-activity__description {
+        background-color: $blue;
+    }
+  }
+    &:nth-child(2){
+      
+      .historia-activity__description {
+        background-color: $green;
+        
+      }
+    }
+
+    &:nth-child(3){
+      
+      .historia-activity__description {
+        margin-left: 5vh;
+        background-color: $morat;
+
+
+      }
+    }
+
+    &:nth-child(odd){
+      .historia-activity__description {
+        margin-right: 5vh;
+        @media (max-width: $tablet) { 
+            margin: 0;
+            
+        }
+      }
+      flex-direction: row;
+      @media (max-width: $tablet) { 
+        flex-direction: column-reverse;
+        
+    }
+    }
+
+
+    &:nth-child(even){
+      flex-direction: row-reverse;
+
+      @media (max-width: $tablet) { 
+        flex-direction: column-reverse;
+        
+    }
+      .historia-activity__description {
+        flex-direction: column-reverse;
+        margin-left: 5vh;
+        @media (max-width: $tablet) { 
+          margin: 0 2.5vh;
+          
+      }
+      }
+    }
+    @media (max-width: $tablet) {
+     
+
+        &:nth-child(odd), &:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+
+     
+    }
+
+
+    .historia__description{
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      text-align: center;
+      background-color: #f0f0f0;
+      
+    }
+
+    .historia__heading{
+      margin-bottom: 2vh;
+      text-align: center;
+    }
+    .historia__image{
+      flex: 1;
+
+      max-width: 100px;
+
+ 
+    }
+
+  }
+
+
+  &__cites {
+    margin: 0 15%;
+
+    &__quote {
+      padding: 1rem;
+      margin: 1rem 0;
+      font-family: $font-family-Comic;
+      border-left: 5px solid $gray;
+
+      &-fuster {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__viatjar {
+    width: 100%;
+
+    &-description {
+      margin-bottom: 2rem;
+      font-family: $font-family-TitilliumWeb;
+    }
+
+    &__planning {
+      @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+      &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5% 0;
+        text-align: center;
+      }
+
+      &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        @media (max-width: $phone) {
+          flex-direction: column;
+        }
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 3.5%;
+          text-align: center;
+
+          &:hover {
+            color: $blue;
+            background-color: $claret; 
+            transform: translateY(-15px), scale(110%) 3s ease;
+          }
+
+          &__icon {
+            margin-bottom: 20px;
+          }
+
+          &__text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &__demografia {
+    margin: 0 15% 5% 15%;
+  }
+}
+
+.historia__articles__contenidor {
+  .historia__articles__contenidor__activitats {
+    &:where(:nth-child(odd)) .historia__articles__contenidor__activitats__text {
+      background-color: $uoc-masterbrand; // Color para los elementos impares
+    }
+
+    &:where(:nth-child(even)) .historia__articles__contenidor__activitats__text {
+      background-color: $light-green; // Color para los elementos pares
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  #demografiaChart {
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+
+
+.cita-personatge,
+.cita-famos {
+  padding-left: 20px;
+  margin-left: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #555;
+  border-left: 3px solid $orange;
+
+  &.nom-personatge {
+    font-weight: bold;
+  }
+}
+
+.cita-personatge{
+  margin-left: 10px;
+}
+
+.cita-famos {
+  margin-left: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+:is(blockquote.cita-famos, blockquote.cita-personatge) {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+}
+
+:where(blockquote.cita-famos, blockquote.cita-personatge) {
+  margin-left: 20px;
+  border-left: 3px solid $orange;
+}
+
+blockquote.cita-personatge:has(.nom-personatge) {
+  font-weight: bold;
+  color: $tomaca
+}
+
+.historia__articles__contenidor__activitats__text p:has(> span) {
+  color: $green; 
+}
+
+
+
+@supports (container-type: inline-size) {
+ 
+
+  @container activity (max-width: 250px) {
+    .historia-activity__image{
+      img{
+        width: 200px;
+        height: auto;
+      }
+    }
+
+
+  }
+  @container activity  (min-width: 250px) and (max-width: 400px) {
+    .historia-activity__image{
+      img{
+        width: 350px;
+        height: auto;
+      }
+    } 
+ 
+  }
+  @container activity  (min-width: 400px) and (max-width: 500px) {
+    .historia-activity__image{
+      img{
+        width: 400px;
+        height: auto;
+      }
+    } 
+ 
+  }
+
+  @container activity  (min-width: 600px) and (max-width: 700px) {
+    .historia-activity__image{
+      img{
+        width: 400px;
+        height: auto;
+      }
+    } 
+ 
+  }
+
+  @container activity  (min-width: 700px)  {
+    .historia-activity__image{
+      img{
+        width: 700px;
+        height: auto;
+      }
+    }
+
+  
+  }
+}

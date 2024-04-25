@@ -1,0 +1,120 @@
+
+/**
+ * Import variables
+ */
+
+ @import "variables";
+ @import "utility";
+ @import "layouts/header";
+@import "layouts/home";
+@import "layouts/footer";
+@import "layouts/cuiners";
+@import "layouts/historia";
+@import "layouts/vallGallinera";
+
+
+//Configuració inicial de la web
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  
+}
+
+h1{
+  font-size: 3rem;
+  &:hover{
+    color:$orange;
+    transform: scale(120%);
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-family-TitilliumWeb;
+  font-size: 1.2rem;
+  line-height: 1.6; //Per a que tingen salts de linea els textos
+  background-color: $fonsPantalla;
+}
+
+
+
+main, header {
+  flex-shrink: 0;   /* Fa que el 'main' ocupi tot l'espai restant*/
+}
+
+footer {
+  flex-grow: 1;   /* Evita que el footer s'ampliï */
+}
+
+//Arregle els hipervincles
+
+a{
+  color:$dark-color;
+  text-decoration: none;
+}
+
+// configure les llistes
+
+ul{
+  list-style: none;
+}
+
+//Els titiols estaràn en majuscules
+h2,h3,h4{
+  font-size: 2rem;
+  &:hover{
+    color:$green;
+    transform: scale(105%);
+  }
+}
+
+
+
+// Configuració del logo
+
+#logo{
+  width:100px;
+  height: 60px;
+}
+
+
+
+footer, header{
+  background-color: $gray;
+}
+
+
+
+/**
+ * Use this file to import partials.
+ * Do not include SCSS code in this file.
+ */
+
+
+
+
+
+/**
+ * Import npm dependencies
+ * see: https://v2.parceljs.org/features/module-resolution/
+ * see commented examples below
+ */
+
+// @import "some-node-module";
+// @import "@some-company/some-node-module";
+
+/**
+ * Import layouts
+ * It's a best practice to use a different partial for each page
+ */
+
+/**
+ * Do NOT include anything else in this file!
+ */
+ 
+
+
+

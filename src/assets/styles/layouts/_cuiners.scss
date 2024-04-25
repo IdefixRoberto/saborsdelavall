@@ -1,0 +1,184 @@
+
+
+/* Codi Cuiners*/
+
+.cuiners { 
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  width: 70%;
+  margin: 10vh auto;
+  
+  
+  @media (max-width: $tablet) {
+    justify-content: space-around;
+    width: 85%;
+
+
+  
+    .fa-tiktok {
+      color: #69c9d0;
+    }
+  
+    .fa-instagram {
+      color: #bc2a8d;
+    }
+  
+    .fa-youtube {
+      color: #ff0000;
+    }
+  
+    .fa-discord {
+      color: #7289da;
+    }
+  }
+
+  @media (max-width: $phone) {
+    align-items: center;
+    width: 90%;
+  }
+
+
+
+  &__concursant {
+    align-items: center;
+    justify-content: center;
+    width: calc(33.333% - 4%);
+    padding: 2.5vh;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 30px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    container-type: inline-size;
+
+    @media (max-width: $tablet) {
+      width: calc(50% - 4%); 
+      padding: 5vh;
+      margin-bottom: 5vh;
+    }
+
+    @media (max-width: $phone) {
+      width: 100%; 
+    }
+
+    &:hover {
+      z-index: 2;
+      box-shadow: 0 0 15px $tomaca;
+      transform: scale(1.1);
+    }
+
+
+  }
+
+  &__imatge {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 5%;
+  }
+
+  &__contingut {
+    &__nom, &__descripcio, &__text {
+      margin-bottom: 2.5%;
+    }
+  }
+
+  &__estrelles {
+    display: inline-block;
+    margin: 5% 2%;
+    color: #ccc;
+    
+    i {
+      color: #ccc; // color por defecto de las estrellas
+      cursor: pointer;
+      transition: color 0.2s;
+      &:hover, &:hover ~ i {
+        color: $gold;
+      }
+    }
+  }
+  &__xarxes{
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+
+    text-decoration: none;
+    i{
+      color:$dark-color;
+    }
+  }
+
+}
+
+
+
+
+  // Container Queries si son soportats
+
+@supports (container-type: inline-size) {
+  @container  (max-width: 200px) {
+    .cuiners__imatge{
+      width: 100%;
+      height: 150px;
+    }
+  
+    .cuiners__xarxes{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  
+      i{
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  @container (min-width: 200px) and (max-width: 300px) {
+    .cuiners__imatge{
+      width: 100%;
+      height: 250px;
+    }
+  
+ 
+  }
+
+  @container (min-width: 300px) and (max-width: 400px) {
+    .cuiners__imatge{
+      width: 100%;
+      height: 350px;
+    }
+  
+
+  }
+
+  @container (min-width: 400px) and (max-width: 700px) {
+    .cuiners__imatge{
+      width: 100%;
+      height: 450px;
+    }
+  
+    .cuiners__xarxes{
+      
+  
+      i{
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  @container (min-width: 700px)  {
+    .cuiners__imatge{
+      width: 100%;
+      height: 450px;
+    }
+  
+    .cuiners__xarxes{
+      
+  
+      i{
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+}

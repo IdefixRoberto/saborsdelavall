@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "no-empty-source": true,
+    "at-rule-no-unknown": null, 
+    "scss/at-rule-no-unknown": [true, { 
+      "ignoreAtRules": [ 
+        "extend",
+        "mixin",
+        "for",
+        ">",
+        "include",
+        "content",
+        "function",
+        "return",
+        "if",
+        "else",
+        "each",
+        "use",
+        "$"
+      ]
+    }],
+    "declaration-no-important": true,
+    "color-no-invalid-hex": true,
+    "font-family-no-duplicate-names": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-unknown": true,
+    "selector-max-compound-selectors": 4,
+    "declaration-block-no-duplicate-properties": true,
+    "color-named": "never",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/dollar-variable-pattern": "^[a-zA-Z]+[a-zA-Z0-9-]*$",
+    "comment-no-empty": true,
+    "scss/at-import-partial-extension-disallowed-list": ["scss"],
+    "no-duplicate-selectors": true,
+    "scss/load-no-partial-leading-underscore": true
+  }
+}

@@ -1,0 +1,307 @@
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%{ border-color: transparent; }
+  50% { border-color: $dark-color; }
+  100%{ border-color: transparent; }
+}
+
+
+  
+  .VallGallinera__h1 {
+    width: 0;
+    margin: 4% 0; 
+    overflow: hidden; /* Oculta el text fora del contenidor */
+    font-family: $font-family-Comic;
+    font-size: 2.5rem;
+ 
+    text-align: center; 
+    white-space: nowrap;
+    border-right: .15em solid transparent; /* Simula el cursor parpadejant */ 
+    animation: typing 6s steps(30, end) forwards, blink-caret .5s step-end 5;
+    @media (max-width: $phone) {
+      font-size: 1.6rem;
+    }
+    
+  }
+  
+
+
+
+
+  .formulari{
+    margin: 5% auto;
+  background: linear-gradient(to right, $cirera,$light-color, $white);
+
+  @media (max-width: $tablet) {
+    font-family: $font-family-Comic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $white;
+    background: $gray;
+  }
+  border-radius: 20px;
+  &__image-container{
+    background-image: url(../images/Gallinera/cherry-105141.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+  }
+
+  &__container2{
+    margin: 3vh
+  }
+}
+
+
+.VallGallinera__Pobles{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vh;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  container-type: inline-size;
+  container-name: cardsGallinera;
+
+  &__Poble{
+    border-radius: 15%;
+    &__img{
+  width: 100%;  
+} 
+}
+  
+}
+
+
+
+.location {
+  &-title{
+    margin: 5px;
+    font-weight: bold;
+
+  }
+  &__contact {
+    justify-content: center;
+    padding: 0;
+  
+  
+    &__title { 
+      margin-bottom: 1rem; 
+      font-size: 1.5rem; 
+      font-weight: bold;
+      color: #333; 
+    }
+  
+    &__list { 
+      padding-left: 0; 
+      margin-top: 1rem;
+      
+      list-style-type: none; 
+    }
+  
+    &__item {
+      
+      margin-bottom: 0.5rem; 
+    }
+  
+    &__link { 
+      font-weight: 500;
+      
+      color: #007bff; 
+      text-decoration: none; 
+  
+      &:hover, &:focus { 
+        color: #0056b3;
+      
+        text-decoration: none; 
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 5vh;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    padding: 0 150px;
+
+
+
+    @media (max-width: $tablet) { 
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+
+      &__logo, &__map, &__contact {
+        align-items: center; 
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+        @media (max-width: $tablet) {
+          width: 90%;
+          .location__logo{
+            img{
+              max-width: 300px;
+            }
+            
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.VallGallinera__Galeria{
+  margin: 2% 25%;
+  @media (max-width: $tablet) {
+    margin: 2% 5%;
+  }
+
+}
+
+.Vall_info__text__h4 {
+  margin: 2.5% 0;
+  text-align: center;
+  animation: deEsquerraADreta 4.2s linear;
+}
+
+@keyframes deEsquerraADreta {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@supports (container-type: inline-size) {
+ 
+
+  @container cardsGallinera (min-width: 200px) {
+    .VallGallinera__Pobles__Poble__img{
+      height: 150px;
+    }
+  }
+
+  @container  cardsGallinera (min-width: 200px) and (max-width: 300px) {
+    .VallGallinera__Pobles__Poble__img{
+      height: 200px;
+    }
+    }
+    @container  cardsGallinera (min-width: 300px) and (max-width: 400px) {
+      .VallGallinera__Pobles__Poble__img{
+        height: 300px;
+      }
+      }
+
+  @container home  (max-width: 400px) {
+    .VallGallinera__Pobles__Poble__img{
+      height: 400px;
+    }
+    }
+}
+
+
+
+.vall-info {
+  &__process__icon_Amagat {
+    width: 0;
+    height: 0;
+    // Ahora oculto todo el div 
+    opacity: 0;
+  }
+
+  &__process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $phone) {
+      grid-template-columns: 1fr;
+    }
+    
+    &__step {
+      position: absolute;
+      top: -.5vh;
+      right: -.5vh;
+      align-items: center;
+      width:  4rem;
+      height: 4rem;
+      padding: 1rem;
+      
+      font-size: 1rem;
+      line-height: 1.5;
+      color: set-text-color($main-color);
+      text-align: center;
+      background-color: $main-color;
+      border-radius: 50%;
+      transition: all 1.5s;
+      &:hover .vall-info__process__icon_Amagat {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+      }
+      &:hover .vall-info__process__step {
+        color: $aliceblue;
+        background-color: $dark-color;
+      }
+    }
+    
+    &__icon {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      padding: 2rem;
+      line-height: 70px;
+      color: set-text-color($dark-color);
+      text-align: center;
+      background-color: $dark-color;
+      border-radius: 50%;
+      transition: all 1.5s;
+
+      &:hover {
+        width: 170px;
+        height: 170px;
+        line-height: 100px;
+        background-color: $main-color;
+        h3 {
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+
+        .vall-info__process__step {
+          color: $aliceblue;
+          background-color: $dark-color;
+        }
+      }
+    }
+  }
+}
+
+
+.location__logo__img {
+  max-width: 100%; 
+  height: auto;  
+}
