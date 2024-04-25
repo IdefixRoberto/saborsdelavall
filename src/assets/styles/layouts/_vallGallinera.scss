@@ -129,7 +129,7 @@
 
   &__container {
     display: flex;
-    gap: 5vh;
+    gap: 5lv;
     align-items: center;
     justify-content: space-around;
     width: 100%; 
@@ -196,24 +196,24 @@
 
   @container cardsGallinera (min-width: 200px) {
     .VallGallinera__Pobles__Poble__img{
-      height: 150px;
+      height: 30cqh;
     }
   }
 
   @container  cardsGallinera (min-width: 200px) and (max-width: 300px) {
     .VallGallinera__Pobles__Poble__img{
-      height: 200px;
+      height: 34cqh;
     }
     }
     @container  cardsGallinera (min-width: 300px) and (max-width: 400px) {
       .VallGallinera__Pobles__Poble__img{
-        height: 300px;
+        height: 38cqh;
       }
       }
 
   @container home  (max-width: 400px) {
     .VallGallinera__Pobles__Poble__img{
-      height: 400px;
+      height: 40cqh;
     }
     }
 }

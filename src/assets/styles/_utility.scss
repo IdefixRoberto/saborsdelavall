@@ -173,7 +173,7 @@ input[class^='boto-']:hover{
 
       @keyframes moveVertical {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(150%); }
+        50% { transform: translateY(10%); }
       }
 
       @keyframes gamaGris {
