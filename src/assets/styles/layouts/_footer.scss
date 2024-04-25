@@ -56,10 +56,14 @@
   }
 
   @media (max-width: $tablet) {
+    display: flex;
     .footer__container {
+      display: flex;
+
       flex-direction: column;
 
       > div {
+        margin-bottom: 2vh;
         flex: none; 
         width: 100%; 
       }
