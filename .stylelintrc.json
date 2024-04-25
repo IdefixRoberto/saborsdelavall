@@ -9,6 +9,12 @@
   "rules": {
     "no-empty-source": true,
     "at-rule-no-unknown": null, 
+    "media-feature-name-no-unknown": [true, {
+      "ignoreMediaFeatureNames": ["svmin", "svmax", "lvmin", "lvmax"]
+    }],
+    "unit-no-unknown": [true, {
+      "ignoreUnits": ["lv"]
+    }],
     "scss/at-rule-no-unknown": [true, { 
       "ignoreAtRules": [ 
         "extend",
@@ -22,7 +28,15 @@
         "else",
         "each",
         "use",
-        "$"
+        "$",
+        "svmin" ,
+        "svmax",
+        "lvmin",
+        "lvmax",
+        "lv"
+
+
+
       ]
     }],
     "declaration-no-important": true,

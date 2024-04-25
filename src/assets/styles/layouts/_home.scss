@@ -1,35 +1,35 @@
 .home {
-  width: 100%;
-  max-height: 70vh;
   //Per defecte utilitzaría flex
   display: flex;
-  flex-direction: column;
   flex: 1;
+  flex-direction: column;
+  width: 100%;
+  max-height: 70vh;
   
-  @media(max-width: $tablet) {
+  @media(max-width: $tablet) { 
+    height: auto;
 
     max-height: none; 
-    height: auto; 
   }
 
   // Amb @supports indique que si el navegador es compatible amb grid utiltize aquesta part del codi
   @supports (display: grid) {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     grid-template-areas:
       "home__a home__a home__b"
       "home__a home__a home__c"
       "home__a home__a home__c"
       "home__d home__d home__c";
+    grid-template-rows: repeat(4, 1fr);
+
+    grid-template-columns: repeat(3, 1fr);
       
 
       @media(max-width: $tablet) {
         display: flex;
         flex-direction: column;
-        max-height: none;
-        height: auto; 
+        height: auto;
+        max-height: none; 
       }
 
       &__a { 
@@ -69,20 +69,20 @@
     }
   }
 
-  &__b { 
-    background-color: $color-secundari;
-    font-family: $font-family-Comic;
-    text-align: center;
-    align-items: center;
-    line-height: 1.5; 
+  &__b {
+    align-items: center; 
     justify-content: start;
+    font-family: $font-family-Comic;
+    line-height: 1.5;
+    text-align: center; 
+    background-color: $color-secundari;
     container-type: inline-size;
     container-name: home;
 
 
     &__text {
-      display: block;
       position: relative;
+      display: block;
       animation: moveVertical 5s linear infinite;
 
       @media(max-width: $tablet) {
@@ -108,12 +108,12 @@
     }
   }
 
-  &__c { 
-    background-color: $gray;
-    height: auto;
-    color: $white;
-    justify-content: center;
+  &__c {
     align-items: center;
+    justify-content: center;
+    height: auto;
+    color: $white; 
+    background-color: $gray;
 
 
   &__container{
@@ -125,14 +125,14 @@
   
   }
 
-  &__d { 
+  &__d {
+    position: relative; 
     overflow: hidden;
     white-space: nowrap;
-    position: relative;
 
-    i {
+    i { 
+      padding: 0 10px;
       font-size: 2rem; 
-      padding: 0 10px; 
       animation: moveX 40s linear infinite;
 
       &:hover {
