@@ -146,6 +146,12 @@
         transform: scale(110%);
       }
     } 
+
+    @media(max-width: $phone) {
+      animation: none;
+      width: 100%;
+      
+    }
   }
 }
 
