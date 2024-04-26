@@ -85,7 +85,8 @@
     background-color: $color-secundari;
     container-type: inline-size;
     container-name: home;
-    min-height: 300px;
+    min-height: 50px;
+    width: 100%;
     
 
 
@@ -95,6 +96,7 @@
       animation: moveVertical 5s linear infinite;
       margin: 0;
       padding: 0;
+      width: auto;
 
       @media(max-width: $tablet) {
         animation: none;
@@ -173,7 +175,6 @@
     .home__b__text{
       font-size: 2rem;
       text-align: center;
-      min-height: 50px;
       min-width: 100%;
       font-size: 2rem;
     }  }
@@ -182,7 +183,6 @@
     .home__b__text{
       font-size: 1.25rem;
       text-align: center;
-      min-height: 50px;
       min-width: 100%;
       font-size: 2rem;
     }  }
@@ -200,13 +200,14 @@
     .home__b__text{
       font-size: 1.25rem;
       text-align: center;
-      min-height: 500px;
+      width: 100%;
       font-size: 2rem;
     }  }
 
     @container home  (min-width: 450px)  {
       .home__b__text{
         font-size: 2.5rem;
+        width: 100%;
       }  }
   
   
