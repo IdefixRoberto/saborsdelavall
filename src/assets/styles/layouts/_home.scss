@@ -78,19 +78,23 @@
 
   &__b {
     align-items: center; 
-    justify-content: start;
+    justify-content: center;
     font-family: $font-family-Comic;
     line-height: 1.5;
-    text-align: center; 
+    text-align: start; 
     background-color: $color-secundari;
     container-type: inline-size;
     container-name: home;
+    min-height: 300px;
+    
 
 
     &__text {
       position: relative;
       display: block;
       animation: moveVertical 5s linear infinite;
+      margin: 0;
+      padding: 0;
 
       @media(max-width: $tablet) {
         animation: none;
@@ -99,10 +103,10 @@
 
 
       &__1, &__2 {
-        display: block;
-        width: 100%;
+        
+        width: auto;
         margin-bottom: 2vh; 
-
+        white-space: nowrap; //Per a que no faça salts
       }
   
       &__1 {
@@ -121,8 +125,12 @@
     height: auto;
     color: $white; 
     background-color: $gray;
-
-
+    
+    @media(max-width: $tablet) {
+      animation: none;
+      width: 100%;
+      
+    }
   &__container{
     padding: 3% 5%;
   }
@@ -136,6 +144,7 @@
     position: relative; 
     overflow: hidden;
     white-space: nowrap;
+    max-width: 100%;
 
     i { 
       padding: 0 10px;
@@ -147,7 +156,7 @@
       }
     } 
 
-    @media(max-width: $phone) {
+    @media(max-width: $tablet) {
       animation: none;
       width: 100%;
       
@@ -162,21 +171,36 @@
 
   @container  home (min-width: 200px) and (max-width: 350px) {
     .home__b__text{
-      font-size: 1.25rem;
+      font-size: 2rem;
+      text-align: center;
+      min-height: 50px;
+      min-width: 100%;
+      font-size: 2rem;
     }  }
 
   @container home  (min-width: 350px) and (max-width: 375px) {
     .home__b__text{
-      font-size: 1.5rem;
+      font-size: 1.25rem;
+      text-align: center;
+      min-height: 50px;
+      min-width: 100%;
+      font-size: 2rem;
     }  }
 
   @container home  (min-width: 375px) and (max-width: 400px) {
     .home__b__text{
-      font-size: 1.75rem;
+      font-size: 1.7rem;
+      text-align: center;
+      min-width: 100%;
+      font-size: 2rem;
+     
     }  }
 
   @container home  (min-width: 400px) and (max-width: 450px) {
     .home__b__text{
+      font-size: 1.25rem;
+      text-align: center;
+      min-height: 500px;
       font-size: 2rem;
     }  }
 
