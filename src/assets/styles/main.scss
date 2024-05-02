@@ -22,8 +22,8 @@
 h1{
   font-size: 3rem;
   &:hover{
-    color:$orange;
-    transform: scale(120%);
+    color:$cirera;
+    transform: scale(105%);
   }
 }
 body {
@@ -60,7 +60,7 @@ ul{
 }
 
 //Els titiols estaràn en majuscules
-h2,h3,h4{
+h2,h3{
   font-size: 2rem;
   &:hover{
     color:$green;

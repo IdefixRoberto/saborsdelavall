@@ -26,11 +26,9 @@
 
 .footer {
   width: 100%;
-
   min-height: 10vh;
   color: $white;
   background-color: $gray; 
-
 
   &__container {
     display: grid;
@@ -41,27 +39,37 @@
     margin: 0 auto; 
     text-align: center;
 
-    > div { 
+    > div {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%; 
-      
 
-      a { 
-        font-size: calc(1em);
-        color: $white;
-        padding: 0;
+      &:nth-child(2) {
+        // Asegurar que el contenidor dels enllaços utilitza tot l'ample disponible
+        display: flex;
+        justify-content: space-between; // Distribueix els elements internament
+      }
+
+      nav {
+        width: 100%; // Asegurar que el <nav> s'estén a tot l'ample
+        display: flex;
+        justify-content: space-between; // Equitativament espaiat
+
+        a { 
+          font-size: calc(1em);
+          color: $white;
+          padding: 0;
+        }
       }
     }
   }
-   
 
   @media (max-width: $tablet) {
     display: flex;
-    .footer__container {
-      display: flex;
+    flex-direction: column;
 
+    .footer__container {
       flex-direction: column;
 
       > div {
@@ -70,9 +78,10 @@
         margin-bottom: 2vh; 
       }
 
-      a { 
+      nav a { 
         font-size: calc(1em + 1vh);
         color: $white;
+        padding: 0;
       }
     }
   }
