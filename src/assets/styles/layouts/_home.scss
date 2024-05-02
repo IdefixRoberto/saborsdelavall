@@ -19,22 +19,23 @@
           }
 
           &--xiquets{
-            grid-row: 3/4;
-            grid-column:  5/7 ;
             z-index: 2;
-            background-color: $gray;
             display: flex;
             flex-direction: column;
+            grid-row: 3/4;
+            grid-column:  5/7 ;
             align-items: center;
             justify-content: center;
+            color: $white;
+            background-color: $gray;
             h4 {
-              font-family: 'Comic Sans MS', cursive; 
-              font-weight: bold; 
-              font-size: calc(1rem + .55vw);
-              color: $dark-color; 
-              animation: none;
               align-items: center;
               justify-content: center;
+              font-family: 'Comic Sans MS', cursive; 
+              font-size: calc(1rem + .55vw); 
+              font-weight: bold;
+              color: $dark-color; 
+              animation: none;
             }
           }
 
@@ -78,18 +79,19 @@
 
           &--adults {
             z-index: 2;
-            grid-row: 3/4;
-            grid-column: 1/3 ;
-            background-color: $gray;
             display: flex;
             flex-direction: column;
+            grid-row: 3/4;
+            grid-column: 1/3 ;
             align-items: center;
             justify-content: center;
+            color: $white;
+            background-color: $gray;
             animation: none; 
             h4 {
               font-family: 'Comic Sans MS', cursive; 
-              font-weight: bold; 
-              font-size: calc(1rem + .65vw);
+              font-size: calc(1rem + .65vw); 
+              font-weight: bold;
               color: $dark-color;
               animation: none; 
             }
@@ -103,7 +105,7 @@
               img{
                 max-width: 20vh;
                 max-height: 25vh;
-                margin-top: 50%;
+                margin-top: 70%;
                }
             
           }
@@ -136,6 +138,11 @@
         text-align: center;
         background-color: transparent;
         transform: translateX(-50%);
+
+        &:hover{
+          transform: translateX(-50%), scale(100%);
+          
+        }
       }
 
 }
@@ -165,13 +172,7 @@
     &__item{
 
       &--image2 {
-        grid-row: 2/3;
-        grid-column: 1/2 ;
         margin: 3vh 0;
-        img{
-          width: 100%;
-          height: 40vh;
-        }
       }
 
       &__boto--xiquets{
@@ -243,9 +244,9 @@
 
     &__title {
       position: relative;
-      text-align: center;
       margin-top: 5vh;
       font-size: calc(1em + 5vh);
+      text-align: center;
     }
 
 
@@ -258,12 +259,70 @@
   .contenidor-grid {
     display: flex;
     flex-direction: column;
+
+    &--displayNone {
+      display: block;
+      margin: 3vh 0;
+      section {
+        article{
+          h3{
+            margin: 3vh 0;
+            font-size: calc(1em + 2vh);
+          }
+
+          
+
+            li {
+              margin-top: 2vh;
+              text-align: left;
+              list-style: disc; 
+            }
+          
+          
+        }
+      }
+
+    &--logo{
+      max-width: 25vh;
+      max-height:25vh;
+      margin: 3vh 0;
+    }
+  }
   }
 }
 
 @supports not (display: flex) {
   .contenidor-grid {
     display: block;
+
+    &--displayNone {
+      display: block;
+      margin: 3vh 0;
+      section {
+        article{
+          h3{
+            margin: 3vh 0;
+            font-size: calc(1em + 2vh);
+          }
+
+          
+
+            li {
+              margin-top: 2vh;
+              text-align: left;
+              list-style: disc; 
+            }
+          
+          
+        }
+      }
+
+    &--logo{
+      max-width: 25vh;
+      max-height:25vh;
+      margin: 3vh 0;
+    }
+  }
   }
 }
 

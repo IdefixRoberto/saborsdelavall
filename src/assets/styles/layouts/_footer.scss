@@ -52,14 +52,14 @@
       }
 
       nav {
-        width: 100%; // Asegurar que el <nav> s'estén a tot l'ample
         display: flex;
         justify-content: space-between; // Equitativament espaiat
+        width: 100%; // Asegurar que el <nav> s'estén a tot l'ample
 
-        a { 
+        a {
+          padding: 0; 
           font-size: calc(1em);
           color: $white;
-          padding: 0;
         }
       }
     }
@@ -70,6 +70,7 @@
     flex-direction: column;
 
     .footer__container {
+      display: flex;
       flex-direction: column;
 
       > div {
@@ -78,10 +79,10 @@
         margin-bottom: 2vh; 
       }
 
-      nav a { 
-        font-size: calc(1em + 1vh);
+      nav a {
+        padding: 2vh 0; 
+        font-size: calc(1em + 2vh);
         color: $white;
-        padding: 0;
       }
     }
   }
