@@ -21,6 +21,7 @@
           &--xiquets{
             grid-row: 3/4;
             grid-column:  5/7 ;
+            z-index: 2;
             background-color: $gray;
             h4 {
               font-family: 'Comic Sans MS', cursive; 
@@ -210,7 +211,7 @@
             
 
               li {
-                margin-left: 10vh;
+                margin-top: 2vh;
                 text-align: left;
                 list-style: disc; 
               }
@@ -230,6 +231,8 @@
     &__title {
       position: relative;
       text-align: center;
+      margin-top: 5vh;
+      font-size: calc(1em + 5vh);
     }
 
 
